@@ -1,5 +1,6 @@
 <?php
-require_once "globals.inc.php";
+
+require_once __DIR__."\globals.inc.php";
 require_once "Models/DB.php";
 
 if (isset($_GET['error'])) {

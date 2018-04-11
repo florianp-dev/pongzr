@@ -1,6 +1,8 @@
 <?php
-
-require_once "../globals.inc.php";
+if (is_file("../globals.inc.php"))
+    require_once "../globals.inc.php";
+else
+    require_once "./globals.inc.php";
 
 class DB
 {
