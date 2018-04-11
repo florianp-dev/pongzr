@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__."\globals.inc.php";
 require_once "Models/DB.php";
 
@@ -18,7 +17,7 @@ if (isset($_GET['error'])) {
     $errMsg = '';
 }
 
-var_dump(DB::getFreeTeams());
+$freeteams = DB::getFreeTeams();
 ?>
 
 <html>
@@ -55,9 +54,13 @@ var_dump(DB::getFreeTeams());
                     <div class="input-field col s6">
                         <select id="teams" name="teams" required>
                             <option disabled selected>Equipes incomplètes</option>
-                            <option value="Option 1">Option 1</option>
-                            <option value="Option 2">Option 2</option>
-                            <option value="Option 3">Option 3</option>
+
+                            <?php
+                            $opt = '<option value="#v">#v</option>';
+                            foreach ($freeteams as $fteam)
+                                echo str_replace('#v', $fteam, $opt);
+                            ?>
+
                         </select>
                         <label for="teams">Sélectionner une équipe</label>
                     </div>

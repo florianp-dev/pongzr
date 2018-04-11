@@ -13,9 +13,9 @@ class DB
         $fp = self::getDatabase("r");
         $freeTeams = array();
 
-        foreach (self::$db as $team)
-            if (count($team) < MAX_PLAYER_TEAM)
-                $freeTeams[] = key($team);
+        foreach (self::$db as $team => $players)
+            if (count($players) < MAX_PLAYER_TEAM)
+                $freeTeams[] = $team;
 
         self::freeDatabase($fp);
 
