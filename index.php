@@ -1,31 +1,8 @@
 <?php
     require_once "globals.inc.php";
+    require_once "Models/DB.php";
 
-    $databaseExample =
-    [
-        "teams" =>
-        [
-            "Team1" =>
-            [
-                "player1",
-                "player2"
-            ],
-            "Team2" =>
-            [
-                "player1",
-                "player2"
-            ]
-        ],
-        "matches" =>
-        [
-            date("d m") =>
-            [
-                "Team1",
-                "Team2"
-            ]
-        ]
-    ];
-    var_dump(serialize($databaseExample));
+    $matches = DB::getMatches();
 ?>
 
 <html>
@@ -60,21 +37,15 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Agonizor</td>
-                        <td>7 - 8</td>
-                        <td>Plexis</td>
-                    </tr>
-                    <tr>
-                        <td>yeplom</td>
-                        <td>9 - 2</td>
-                        <td>Cresson</td>
-                    </tr>
-                    <tr>
-                        <td>Trebor</td>
-                        <td>9 - 2</td>
-                        <td>Agonizor</td>
-                    </tr>
+                <?php
+                    echo '<tr>';
+                    foreach ($matches as $date => $teams) {
+                        echo "<td>{$teams[0]}</td>";
+                        echo "<td>{$date}</td>";
+                        echo "<td>{$teams[1]}</td>";
+                    }
+                    echo '<tr>';
+                ?>
                 </tbody>
 
             </table>

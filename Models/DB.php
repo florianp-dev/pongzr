@@ -9,6 +9,17 @@ class DB
     private static $_DB_Name = __DIR__."\app_database";
     private static $db;
 
+    public static function getMatches() {
+        $fp = self::getDatabase("r");
+
+        $matches = array();
+        $matches = self::$db[DB_MATCHES];
+
+        self::freeDatabase($fp);
+
+        return $matches;
+    }
+
     public static function getFreeTeams() {
         $fp = self::getDatabase("r");
         $freeTeams = array();
