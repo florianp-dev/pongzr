@@ -13,7 +13,7 @@ class DB
         $fp = self::getDatabase("r");
         $freeTeams = array();
 
-        foreach (self::$db as $team => $players)
+        foreach (self::$db[DB_TEAMS] as $team => $players)
             if (count($players) < MAX_PLAYER_TEAM)
                 $freeTeams[] = $team;
 
@@ -30,8 +30,8 @@ class DB
          * Si c'est un nouvelle team, ce sera forcément inférieur au max
          * Si c'est une team existante, si elle est sélectionnée alors c'est qu'elle est incomplète
          */
-        if (count(self::$db[$teamName]) < MAX_PLAYER_TEAM)
-            self::$db[$teamName][] = $firstName;
+        if (count(self::$db[DB_TEAMS][$teamName]) < MAX_PLAYER_TEAM)
+            self::$db[DB_TEAMS][$teamName][] = $firstName;
         // Cas particulier : si le nom de la "nouvelle" équipe est lemême qu'une équipe existante
         else {
             self::freeDatabase($fp);

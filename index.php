@@ -1,5 +1,31 @@
 <?php
     require_once "globals.inc.php";
+
+    $databaseExample =
+    [
+        "teams" =>
+        [
+            "Team1" =>
+            [
+                "player1",
+                "player2"
+            ],
+            "Team2" =>
+            [
+                "player1",
+                "player2"
+            ]
+        ],
+        "matches" =>
+        [
+            date("d m") =>
+            [
+                "Team1",
+                "Team2"
+            ]
+        ]
+    ];
+    var_dump(serialize($databaseExample));
 ?>
 
 <html>

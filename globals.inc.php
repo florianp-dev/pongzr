@@ -1,5 +1,7 @@
 <?php
 
+define("DB_TEAMS", "teams");
+
 define("MISSING_FIELDS", 1);
 define ("TEAM_EXISTS", 2);
 define("MAX_PLAYER_TEAM", 2);
