@@ -3,6 +3,8 @@
     require_once "Models/DB.php";
 
     $matches = DB::getMatches();
+    
+    // TODO ajhouter un message de succès après une inscription
 ?>
 
 <html>
