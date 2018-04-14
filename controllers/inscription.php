@@ -1,6 +1,6 @@
 <?php
 require_once '../Models/DB.php';
-//var_dump($_POST);
+require_once "../globals.inc.php";
 
 // si pas d'équipe choisie et pas d'option de création
 if (!isset($_POST['teams']) && !isset($_POST['createTeam']))
@@ -11,4 +11,4 @@ $team = isset($_POST['createTeam'])? $_POST['teamName'] : $_POST['teams'];
 
 DB::savePlayer($firstname, $team);
 
-header("Location: ../index.php?success=1");
+header("Location: ../index.php?success=".REGISTRATION_OK);
