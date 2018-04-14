@@ -35,7 +35,7 @@ $freeteams = DB::getFreeTeams();
 
     <body>
 
-        <h3>Inscription</h3>
+        <h2>Inscription</h2>
 
         <div>
             <?= $errMsg ?>
