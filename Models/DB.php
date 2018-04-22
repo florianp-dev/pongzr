@@ -9,6 +9,19 @@ class DB
     private static $_DB_Name = __DIR__."\app_database";
     private static $db;
 
+    public static function getToken()
+    {
+        $fp = self::getDatabase("r");
+
+        if (isset(self::$db[DB_ADMIN_TOKEN]))
+            $token = self::$db[DB_ADMIN_TOKEN];
+        else
+            $token = false;
+
+        self::freeDatabase($fp);
+        return $token;
+    }
+
     public static function getMatches() {
         $fp = self::getDatabase("r");
 
