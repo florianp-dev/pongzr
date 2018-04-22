@@ -16,9 +16,12 @@
 
     <div class="container" style="padding: 10%;">
 
-        <form method="post">
-            <div class="input-field col s2 push-s2">
-                <input type="text" id="token" class="validate" required />
+        <form method="post" action="../controllers/admin.php">
+
+            <button id="generateToken" class="btn">Générer</button>
+
+            <div class="input-field col s2 push-s2" style="margin-top: 4rem;">
+                <input type="text" name="token" pattern="[A-Za-z0-9]{6,}" id="token" class="validate" required/>
                 <label for="token">Token de connexion : </label>
             </div>
             <div class="row">
@@ -43,5 +46,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="../js/admin.js" type="application/javascript"></script>
     </body>
 </html>
