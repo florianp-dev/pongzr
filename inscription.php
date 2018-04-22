@@ -97,6 +97,6 @@ $freeteams = DB::getFreeTeams();
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript Materialize -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        <script src="js/compute.js" type="text/javascript"></script>
+        <script src="js/index.js" type="text/javascript"></script>
     </body>
 </html>

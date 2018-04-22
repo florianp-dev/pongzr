@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function() {
     $('select#teams').formSelect();
 
     $('input#createTeam').on('click', function () {
