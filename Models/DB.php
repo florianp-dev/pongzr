@@ -13,8 +13,10 @@ class DB
     {
         $fp = self::getDatabase("r");
 
-        if (isset(self::$db[DB_ADMIN_TOKEN]))
-            $token = self::$db[DB_ADMIN_TOKEN];
+        if (isset(self::$db[DB_ADMIN_TOKEN])) {
+            $token['token'] = self::$db[DB_ADMIN_TOKEN];
+            $token['salt'] = self::$db[DB_ADMIN_TOKEN_SALT];
+        }
         else
             $token = false;
 

@@ -9,3 +9,4 @@ define("REGISTRATION_OK", 1);
 define("MAX_PLAYER_TEAM", 2);
 define("MISSING_FIELDS", 3);
 define ("TEAM_EXISTS", 4);
+define("BAD_TOKEN", 5);
